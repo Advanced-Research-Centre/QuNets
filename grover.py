@@ -22,7 +22,6 @@ def nCX(c,t,b):
 		c1 = c[:nch]
 		c2 = c[nch:]
 		c2.append(b[0])
-		# print([c1,b,nch+1],[c2,t,nch])
 		nCX(c1,b,[c[nch]])
 		nCX(c2,t,[c[nch-1]])
 		nCX(c1,b,[c[nch]])
@@ -62,7 +61,7 @@ def grover():
     for i in range(0,NUM_QB):
         qcirc.measure(i,i)
 
-NUM_QB = int(input("Number of qubits: ") or 9)
+NUM_QB = int(input("Number of qubits: ") or 3)
 
 print(NUM_QB,"qubit Grover search where the Oracle searches for the all-1s entry in an equal superposition")
 qcirc = QuantumCircuit(NUM_QB+1,NUM_QB)
